@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Posicionamiento con HTML 5 y Google Maps</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<script src="cordova.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'>	
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+	<style>
+	
+	* { margin: 0; padding: 0; }
+	html { height: 100%; }
+	body { background-image: url(images/old_map.png); font-size: 16px; font-family: 'Marcellus', serif; height: 100%; position: relative; }
+	header { background-color: rgba(0,0,0,.88); height: 80px; width: 100%; position: fixed; z-index: 99; box-shadow: 0px 2px 3px #333333; }
+	header > h1 { color: #FFFFFF; font-family: 'Marcellus', serif; font-size: 1.2em; font-weight: normal; margin: 30px 60px; }
+	
+	#mapa { position: absolute; background: transparent; height: 100%; width: 100%; top: 0; left: 0; right: 0; bottom: 0; }
+	#informacion { position: absolute; background: rgba(0,16,27,.85); z-index: 200; top: 70%; width: 30%; padding: 12px; }
+	
+	#informacion h2,
+	#informacion h3 { color: #FFFFFF; text-shadow: 1px 1px 1px #000000; font-weight: normal; font-size: .9em; }
+	
+	#informacion h2 { font-size: 1.1em; margin-bottom: 10px; }
+	
+	#informacion h3 span { color: #FF5555; }
+	
+	</style>
+	<script type="text/javascript">
+	
+	function informacion (coordenadas) {
+		$("#latitude").html(coordenadas.Lat);
+		$("#longitude").html(coordenadas.Lng);
+	}
+	
+	function iniciar() {
+		
+		var coordenadas = {
+			Lat: 0,
+			Lng: 0
+		};
+		
+		function localizacion (posicion) {
+			coordenadas = {
+				Lat: posicion.coords.latitude,
+				Lng: posicion.coords.longitude
+			}
+			
+			informacion(coordenadas);
+			
+			var mapOptions = {
+				zoom: 16,
+				center: new google.maps.LatLng(coordenadas.Lat, coordenadas.Lng),
+				disableDefaultUI: true,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			}
+			
+			var map = new google.maps.Map(document.getElementById('mapa'), mapOptions);
+			
+			var infowindow = new google.maps.InfoWindow({
+				map: map,
+				position: new google.maps.LatLng(coordenadas.Lat, coordenadas.Lng),
+				content: 'Tu ubicación (geolocation) usando HTML5 y Google Maps.'
+            });
+		}
+		
+		function errores (error) {
+			alert('Ha ocurrido un error al intentar obtener la información');
+		}
+		
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(localizacion,errores);
+		} else {
+			alert("Tu navegador no soporta o no tiene habilitada la 'Geolocalización'");
+		}
+		
+	}
+	</script>
+</head>
+<body onload="iniciar()">
+	<header>
+		<h1>Posicionamiento con HTML 5 y Google Maps</h1>
+	</header>
+	<div id="informacion">
+		<h2>Tu posición actual es:</h2>
+		<h3>Latitud: <span id="latitude"></span></h3>
+		<h3>Longitud: <span id="longitude"></span></h3>
+	</div>
+	<div id="mapa"></div>
+</body>
+</html>

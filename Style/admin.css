@@ -1,0 +1,107 @@
+.form-login{
+    margin-top:35px;
+}
+
+.form-control-separator{
+    margin-bottom:10px;
+}
+
+.form-contro-date .form-control{
+    display: inline !important;
+}
+
+.btn-group{
+    float: right;
+}
+
+.toolBar{
+    clear: both;
+}
+
+.formulario .title{
+    font-weight: bold;
+    font-size: 24px;
+    color: #004989;
+}
+
+.table .componente{
+    width:95%;
+    text-align: right;
+    display:block;
+    position: relative;
+    clear:both;
+    margin:0% 2.5%;
+}
+
+.bs-glyphicons {
+    margin: 0 -10px 20px;
+    overflow: hidden;
+    padding-top: 3%;
+}
+.bs-glyphicons-list {
+    list-style: none outside none;
+    padding-left: 0;
+}
+
+.bs-glyphicons li {
+    cursor:pointer;
+    float: left;    
+    text-align: center;
+    padding: 5px;
+}
+
+.bs-glyphicons li a{
+    height: 106px;
+    width: 106px;
+    display:block;
+    position:relative;
+    /*padding:30px 10px;*/
+    text-align: center;
+    color:#008CBA;
+    font-size: 16px;
+    text-decoration: none;
+    /*background-image: -moz-linear-gradient(center top , #ffffff 0%, #eeeeee 100%);*/
+    /*border: 1px solid #ccc;*/
+    /*border-radius:1em;*/
+}
+
+.bs-glyphicons li a:hover{
+    color:#FFF;
+    /*border: 1px solid #F5F5F5;*/
+    background-image: -moz-linear-gradient(center top , #008CBA 0%, #008CBA 100%);
+    border-radius:1em
+}
+
+.glyphicon {
+    font-size: 14px;
+}
+
+.dashboard .glyphicon {
+    font-size: 24px;
+}
+
+div.tagsinput { border:1px solid #CCC; background: #FFF; padding:5px; width:300px; height:100px; overflow-y: auto;}
+div.tagsinput span.tag { border: 1px solid #a5d24a; -moz-border-radius:2px; -webkit-border-radius:2px; display: block; float: left; padding: 5px; text-decoration:none; background: #cde69c; color: #638421; margin-right: 5px; margin-bottom:5px;font-family: helvetica;  font-size:13px;}
+div.tagsinput span.tag a { font-weight: bold; color: #82ad2b; text-decoration:none; font-size: 11px;  } 
+div.tagsinput input { width:80px; margin:0px; font-family: helvetica; font-size: 13px; border:1px solid transparent; padding:5px; background: transparent; color: #000; outline:0px;  margin-right:5px; margin-bottom:5px; }
+div.tagsinput div { display:block; float: left; } 
+.tags_clear { clear: both; width: 100%; height: 0px; }
+.not_valid {background: #FBD8DB !important; color: #90111A !important;}
+
+
+
+#footer {
+    border-top-color: #c9e0ed;
+    border-top-style: solid;
+    border-top-width: 1px;
+    font-size: 0.8em;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    text-align: center;
+}

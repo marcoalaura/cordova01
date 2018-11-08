@@ -1,0 +1,99 @@
+/* 
+    Document   : print
+    Created on : Sep 26, 2011, 10:38:38 AM
+    Author     : aortuno
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+html{
+    margin:0px;
+    padding: 0px;
+}
+
+body{
+    margin:0px;
+    padding: 0px;
+    font-size: 12px;
+    font-family: Verdana;
+}
+
+#cuerpoReporte{
+    width:100%;
+    float:left;
+    background-color: #FFF;
+    height:auto !important;
+    position:relative;
+    display: block;
+}
+
+#cuerpoReporte .titulo{
+    background-color: transparent;
+    border: 0px;
+    color:#000;
+    float:left;
+    position:relative;
+    margin:10px 0px 0px 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#cuerpoReporte .datosReporte{
+    float:right;
+    position:relative;
+    margin:10px 10px 0px 0px;
+    font-size: 12px;
+}
+
+#cuerpoReporte .cuerpo{
+    border-top:1px solid #333;
+    margin-top: 15px;
+    float:left;
+    position: relative;
+    clear:both;
+    display: block;
+    min-height: 20px;
+    width: 100%;
+    font-size: 12px;
+    font-family: Verdana;
+}
+
+#cuerpoReporte .cuerpo table{
+    width:100%;
+    table-layout: auto;
+    border-bottom:1px solid #000;
+    margin:0px 0px 10px 0px;
+}
+
+#cuerpoReporte .cuerpo table tr.cabecera{
+    background-color: #AAA;
+    height:25px;
+    text-align:center;
+    font-size:14px;
+}
+
+#cuerpoReporte .cuerpo table tr.blanco{
+    background-color:#FFF;
+}
+
+#cuerpoReporte .cuerpo table tr.gris{
+    background-color:#DDD;
+}
+
+#cuerpoReporte .cuerpo table tr td{
+    border-top:1px solid #000;
+    border-left:1px solid #888;
+    font-size: 12px;
+    font-family: Verdana;
+}
+
+#cuerpoReporte .PieReporte{
+    text-align: center;
+    position: relative;
+    float: left;
+    display: block;
+    clear: both;
+    width: 100%;
+    margin:5px 0px;
+    font-size: 8px;
+}
